@@ -59,7 +59,9 @@ def get_sum_for_parent_id(transaction_id):
         final_amount = get_transaction_sum(transaction_id)
         return make_response({
             "success"   : True,
-            "data"      : final_amount,
+            "data"      : {
+                "sum" : final_amount
+            },
         }, 200)
     except Exception as e:
         return make_response({
